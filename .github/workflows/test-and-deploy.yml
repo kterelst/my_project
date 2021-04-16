@@ -21,7 +21,15 @@ jobs:
     needs: run-tests
     runs-on: ubuntu-20.04
     steps:
-      - name: Pull request
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITAL_OCEAN }}
+      - name: Copy folder to Digital Ocean
+        run: scp -i ~/.ssh/id_rsa.pub -r my-project root@134.209.198.158:/home/cd/
+        with:
+          token: ${{ secrets.DIGITAL_OCEAN }}
+      - name: restart NGINX
         uses: sh deploy.sh
         with:
-          super_secret: ${{ secrets.SuperSecret }}
+          token: ${{ secrets.DIGITAL_OCEAN }}
