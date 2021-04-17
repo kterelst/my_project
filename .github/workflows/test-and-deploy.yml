@@ -28,5 +28,5 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.DIGITAL_OCEAN_PRIVATE_KEY }}
           REMOTE_HOST: ${{ '134.209.198.158' }}
           REMOTE_USER: ${{ 'root' }}
-          SOURCE: '.'
+          SOURCE: 'my_project/'
           TARGET: '/home/cd/'
