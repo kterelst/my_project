@@ -21,15 +21,39 @@ jobs:
     needs: run-tests
     runs-on: ubuntu-20.04
     steps:
-      - name: Install doctl
-        uses: digitalocean/action-doctl@v2
-        with:
-          token: ${{ secrets.DIGITAL_OCEAN }}
-      - name: Copy folder to Digital Ocean
-        run: scp -i ~/.ssh/id_rsa.pub -r my-project root@134.209.198.158:/home/cd/
-        with:
-          token: ${{ secrets.DIGITAL_OCEAN }}
-      - name: restart NGINX
-        uses: sh deploy.sh
-        with:
-          token: ${{ secrets.DIGITAL_OCEAN }}
+      # - name: Install doctl
+      #   uses: digitalocean/action-doctl@v2
+      #   with:
+      #     token: ${{ secrets.DIGITAL_OCEAN }}
+      # - name: Copy folder to Digital Ocean
+      #   uses: ./
+      #   with:
+      #     local: ./
+      #     remote: scp/
+      #   run: scp -i ~/.ssh/id_rsa.pub -r my-project root@134.209.198.158:/home/cd/
+      #   with:
+      #     token: ${{ secrets.DIGITAL_OCEAN }}
+      # - name: restart NGINX
+      #   uses: sh deploy.sh
+      #   with:
+      #     token: ${{ secrets.DIGITAL_OCEAN }}
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Copy file via scp
+      uses: appleboy/scp-action@master
+      env:
+        HOST: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PORT: ${{ secrets.PORT }}
+        KEY: ${{ secrets.SSHKEY }}
+      with:
+        source: "."
+        target: "/home/cd"
+    - name: Executing remote command
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PORT: ${{ secrets.PORT }}
+        KEY: ${{ secrets.SSHKEY }}
+        script: systemctl restart nginx
