@@ -26,8 +26,7 @@ jobs:
         uses: easingthemes/ssh-deploy@v2.1.4
         env:
           SSH_PRIVATE_KEY: ${{ secrets.DIGITAL_OCEAN_PRIVATE_KEY }}
-          REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
-          REMOTE_USER: ${{ secrets.DEPLOY_USER }}
-          REMOTE_PORT: ${{ secrets.DEPLOY_PORT }}
-          SOURCE: .
+          REMOTE_HOST: ${{ 134.209.198.158 }}
+          REMOTE_USER: ${{ root }}
+          SOURCE: '.'
           TARGET: '/home/cd/'
