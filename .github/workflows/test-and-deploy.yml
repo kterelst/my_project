@@ -26,7 +26,7 @@ jobs:
         uses: easingthemes/ssh-deploy@v2.1.4
         env:
           SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
-          REMOTE_HOST: ${{ secrets.SERVER_ID }}
+          REMOTE_HOST: ${{ secrets.SERVER_IP }}
           REMOTE_USER: ${{ secrets.DEPLOY_USER }}
           SOURCE: 'my_project/'
           TARGET: '/home/cd/'
