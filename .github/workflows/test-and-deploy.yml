@@ -18,7 +18,7 @@ jobs:
       - name: Run tests
         run: pytest
   deploy:
-    needs: run-tests # deplendency
+    needs: run-tests # dependency
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
