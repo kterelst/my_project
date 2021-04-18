@@ -33,7 +33,7 @@ jobs:
           # Remote host user
           user: ${{ secrets.DEPLOY_USER }}
           # SSH private key
-          key: ${{ secrets.DEPLOY_KEY_PV }}
+          key: ${{ secrets.DEPLOY_KEY }}
           # Repo directory path. Default whole repo
           source: '.'
           # Remote directory path. Default home directory (~/)
