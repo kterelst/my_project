@@ -31,7 +31,7 @@ jobs:
           password: Ze^Ta02mPgUM
           port: 22
           source: "."
-          target: "/home/cd"
+          target: "/home/cd/my_project"
 
 
 
