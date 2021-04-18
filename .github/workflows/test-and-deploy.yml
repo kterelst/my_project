@@ -21,12 +21,22 @@ jobs:
     needs: run-tests # dependency
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
-      - name: ssh deploy
-        uses: easingthemes/ssh-deploy@v2.1.6
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
-          REMOTE_HOST: ${{ secrets.SERVER_IP }}
-          REMOTE_USER: ${{ secrets.DEPLOY_USER }}
-          SOURCE: 'my_project/'
-          TARGET: '/home/cd/'
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: copy file via ssh key
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          source: "my_project/"
+          target: "/home/cd/"
+
+      # - name: ssh deploy
+      #   uses: easingthemes/ssh-deploy@v2.1.6
+      #   env:
+      #     SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+      #     REMOTE_HOST: ${{ secrets.SERVER_IP }}
+      #     REMOTE_USER: ${{ secrets.DEPLOY_USER }}
+      #     SOURCE: 'my_project/'
+      #     TARGET: '/home/cd/'
