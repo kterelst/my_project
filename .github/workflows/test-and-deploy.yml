@@ -42,5 +42,3 @@ jobs:
       #     PORT: ${{ secrets.PORT }}
       #     KEY: ${{ secrets.SSHKEY }}
       #     script: cat /opt/app/README.md
-      
-      
