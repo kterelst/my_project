@@ -29,7 +29,7 @@ jobs:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.DEPLOY_USER }}
           port: ${{ secrets.DEPLOY_PORT }}
-          key: ${{ secrets.RSA_KEY_PUB }}
+          key: ${{ secrets.RSA_KEY }}
           source: "."
           target: "/home/cd/my-project"
 
