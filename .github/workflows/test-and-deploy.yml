@@ -45,7 +45,7 @@ jobs:
       #     KEY: ${{ secrets.DEPLOY_KEY_PV }}
       #   with:
       #     source: "."
-      #     target: "/home/cd"
+      #     target: "/home/cd" 
 
       # - name: Executing remote  command
       #   uses: appleboy/ssh-action@master
