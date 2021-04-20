@@ -1,5 +1,4 @@
-import lib
-# Import what we need from flask
+from lib import power
 from flask import Flask, request
 
 # Create a Flask app inside `app`
@@ -30,20 +29,3 @@ def index():
             + "Solution: "
             + solution
             )
-
-
-# def calc(power1, power2):
-#     try:
-#         solution = lib.power(power1, power2)
-#         return str(solution)
-#     except ValueError:
-#         return "invalid input"
-def power(x, y):
-    try:
-        return str(x**y)
-    except ValueError:
-        return "invalid input"
-
-
-if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=8080, debug=True)
