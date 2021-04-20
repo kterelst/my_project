@@ -13,7 +13,7 @@ def index():
     power2 = request.args.get("power2", "")
     
     if power1 and power2:
-        solution = power(power1, power2)
+        solution = str(power(power1, power2))
     else:
         solution = ""
     
