@@ -19,7 +19,7 @@ def index():
                 <input type="text" name="number 2">
                 <input type="submit" value="Release the POWER">
             </form>"""
-        + power
+        + power1
     )
 
 
