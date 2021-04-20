@@ -39,4 +39,4 @@ jobs:
           USERNAME: ${{ secrets.DEPLOY_USER }}
           PORT: ${{ secrets.DEPLOY_PORT }}
           KEY: ${{ secrets.GHA_RSA }}
-          script: cat deploy.sh
+          script: sh deploy.sh
