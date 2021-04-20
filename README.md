@@ -4,19 +4,17 @@
 
 ##### Element 1: Virtual Private Server **Digital Ocean**
 This is the final destination. The place users can interact with.
-Listed on http://134.209.198.158/ the first page 
+Checkout the Webpage on http://134.209.198.158/.
+
 
 ***Digital Ocean***
-
 
 > Problem:
 > 
 >
 
 ##### Element 2: Using **SSH** with **SECRETS**
-The safe way to 
-
-***SSH***
+The ***safe*** way to communicate with your remote server and GitHub
 
 > Problem:
 >

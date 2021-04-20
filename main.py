@@ -11,18 +11,19 @@ app = Flask(__name__)
 def index():
     power1 = request.args.get("power1", "")
     power2 = request.args.get("power2", "")
+    if power1 and power2:
+        solution = power(power1, power2)
+    else:
+        solution = ""
     return (
-        """ <h2>Thanx Winc Team!</h2>
+        """ <br />
+            <h2>Thanx Winc Team!</h2>
             <br /><br />
             <form action="" method="get">
-                <input type="text" name="number 1">
-                <input type="text" name="number 2">
-                <input type="submit" value="Release the POWER">
+                "Number 1": <input type="text" name="power1">
+                "Number 2": <input type="text" name="power2">
+                <input type="submit" value="Unleash the POWER!!!">
             </form>"""
-        + power1
+        + "Solution: "
+        + solution
     )
-
-
-@app.route("/<int:power>")
-def calculate(power1, power2):
-    return power(power1, power2)
