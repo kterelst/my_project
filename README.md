@@ -1,21 +1,12 @@
 [![Test and Deploy](https://github.com/kterelst/my_project/actions/workflows/test-and-deploy.yml/badge.svg)](https://github.com/kterelst/my_project/actions/workflows/test-and-deploy.yml)
 
-> Borrowed from my parents
-
-> Hopefully no charge
-
-  
-  ### My 3 elements
-
-  
+### My 3 elements
 
 ##### Element 1: Virtual Private Server **Digital Ocean**
 
 This is the final destination. The place users can interact with.
 
 Checkout the Webpage on ***http://134.209.198.158/***.
-
-  
 
 > Problem:
 
@@ -27,13 +18,16 @@ Checkout the Webpage on ***http://134.209.198.158/***.
 
 > No creditcard owned
 
+> Borrowed from my parents
+
+> Hopefully no charge
+
+
 ##### Element 2: Using **SSH** with **SECRETS**
 
 The ***safe*** way to communicate with your remote server and GitHub.
 
 Putting these SSH-keys in GitHub Secrets ensures that these won't be prone to decription.
-
-  
 
 > Problem:
 
@@ -47,7 +41,6 @@ Putting these SSH-keys in GitHub Secrets ensures that these won't be prone to de
 
 > With the help of Donatas, Thomas and Dominique found a working solution
 
-  
 
 I advise to elaborate on the subject of SSH:
 
@@ -55,8 +48,6 @@ I advise to elaborate on the subject of SSH:
 
 * But also how to implement them into het local, remote and GitHub.
 
-  
-  
 
 ##### Element 3: Web Server **NGINX**
 
@@ -68,7 +59,6 @@ running on my Digital Ocean Virtual Private Server.
 
 Ofcourse this stands for Continuous Deployment!
 
-  
 
 > Problem:
 
