@@ -1,3 +1,3 @@
 #!/bin/bash
 
-systemctl restart nginx
+systemctl restart cd.service

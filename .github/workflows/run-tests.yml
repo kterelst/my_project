@@ -1,7 +1,7 @@
 name: Run tests
 
 # Run this workflow whenever something new is pushed.
-on: push
+on: workflow_dispatch
 jobs:
   run-tests:
     runs-on: ubuntu-20.04
