@@ -39,7 +39,7 @@ jobs:
           USERNAME: ${{ secrets.DEPLOY_USER }}
           PORT: ${{ secrets.DEPLOY_PORT }}
           KEY: ${{ secrets.GHA_RSA }}
-          script: sh deploy.sh
+          script: .github/deploy.sh
 
 
 # systemctl restart cd.service
